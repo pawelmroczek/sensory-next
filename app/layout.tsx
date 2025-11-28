@@ -33,7 +33,7 @@ export default function RootLayout({
         <ReduxProvider>
           <SidebarProvider>
             <AppSidebar />
-            <main>
+            <main className="w-full ">
               <SidebarTrigger />
 
               {children}

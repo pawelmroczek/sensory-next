@@ -1,10 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface Measurement {
-  timestamp: string;
-  value: number;
-  Id: string;
-}
+import type { Measurement, SensorId as GlobalSensorId } from "@/types";
 
 interface SensorData {
   data: Measurement[];
@@ -76,12 +71,8 @@ const initialState: SensorsState = {
   },
 };
 
-// Typy dla ID sensorów
-export type SensorId =
-  | keyof TemperatureSensors
-  | keyof HumiditySensors
-  | keyof SunlightSensors
-  | keyof CO2Sensors;
+// Eksportuj typ SensorId z globalnych typów
+export type SensorId = GlobalSensorId;
 
 const sensorSlice = createSlice({
   name: "sensors",

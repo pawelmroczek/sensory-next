@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "./store";
-import type { SensorId } from "./slices/sensorSlice";
+import type { SensorId, SensorType } from "@/types";
 
 // Hooki - dokładnie tak jak w JS, tylko z typami
 export const useAppDispatch = () => useDispatch<AppDispatch>();
@@ -39,5 +39,5 @@ export const selectSensorErrorById = (state: RootState, sensorId: SensorId) => {
 // Selektor do pobrania wszystkich 4 sensorów danego typu
 export const selectAllSensorsOfType = (
   state: RootState,
-  sensorType: "temperature" | "humidity" | "sunlight" | "co2"
+  sensorType: SensorType
 ) => state.sensors[sensorType];

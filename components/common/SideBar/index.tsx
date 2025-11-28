@@ -22,37 +22,38 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { SENSOR_ICONS } from "@/types";
 
 // Menu items.
 const items = [
   {
     title: "Temperatura",
     url: "#",
-    icon: ThermometerSun,
+    icon: SENSOR_ICONS["temperature"],
   },
   {
     title: "Wilgotność",
     url: "#",
-    icon: Droplets,
+    icon: SENSOR_ICONS["humidity"],
   },
   {
     title: "Nasłonecznienie",
     url: "#",
-    icon: Sun,
+    icon: SENSOR_ICONS["sunlight"],
   },
   {
     title: "CO2",
     url: "#",
-    icon: BubblesIcon,
+    icon: SENSOR_ICONS["co2"],
   },
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar className="py-10">
+    <Sidebar >
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Pomiary sensorów</SidebarGroupLabel>
+          <SidebarGroupLabel className="mt-10">GreenHouse Simulator</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
