@@ -4,10 +4,13 @@ import {
   Calendar,
   Droplets,
   Home,
+  House,
   Inbox,
   LayoutDashboard,
+  Leaf,
   Search,
   Settings,
+  Sprout,
   Sun,
   ThermometerSun,
 } from "lucide-react";
@@ -28,37 +31,43 @@ import { SENSOR_ICONS } from "@/types";
 const items = [
   {
     title: "Temperatura",
-    url: "#",
+    url: "/temperature",
     icon: SENSOR_ICONS["temperature"],
   },
   {
     title: "Wilgotność",
-    url: "#",
+    url: "/humidity",
     icon: SENSOR_ICONS["humidity"],
   },
   {
     title: "Nasłonecznienie",
-    url: "#",
+    url: "/sunlight",
     icon: SENSOR_ICONS["sunlight"],
   },
   {
     title: "CO2",
-    url: "#",
+    url: "/co2",
     icon: SENSOR_ICONS["co2"],
   },
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar >
+    <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="mt-10">GreenHouse Simulator</SidebarGroupLabel>
+          <SidebarGroupLabel className="my-10 ">
+            <div className="flex text-sm text-green-800 items-end gap ">
+              GreenHouse Simulator
+              <Sprout className="ml-1 mb-0.5" />
+              <House className="mb-0.5" />
+            </div>
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href={"#"}>
+                  <a href={"/"}>
                     <LayoutDashboard />
                     <span>Dashboard</span>
                   </a>

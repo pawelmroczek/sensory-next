@@ -1,5 +1,6 @@
 "use client";
 
+import { colorBgMap, getSensorPrefix } from "@/lib/sensorTypes/utils";
 import { useAppSelector, selectAllSensorsOfType } from "@/store/hooks";
 import {
   SensorType,
@@ -53,27 +54,12 @@ const AverageValue = ({ sensorType }: AverageValueProps) => {
   const overallAverage = calculateOverallAverage();
 
   // Pobierz prefix ID dla danego typu sensora
-  const getSensorPrefix = () => {
-    const prefixMap = {
-      temperature: "tmp",
-      humidity: "hum",
-      sunlight: "sun",
-      co2: "co2",
-    };
-    return prefixMap[sensorType];
-  };
+ 
 
-  const prefix = getSensorPrefix();
+  const prefix = getSensorPrefix(sensorType);
 
   const Icon = SENSOR_ICONS[sensorType];
 
-  // Mapa z kompletnymi klasami Tailwind (muszą być pełne stringi)
-  const colorBgMap = {
-    temperature: "bg-red-200",
-    humidity: "bg-blue-200",
-    sunlight: "bg-yellow-200",
-    co2: "bg-green-200",
-  };
 
   const colorBg = colorBgMap[sensorType];
 
