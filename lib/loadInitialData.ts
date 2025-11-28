@@ -11,6 +11,8 @@ export const loadInitialData = (dispatch: AppDispatch) => {
   // Zacznij od ustawienia loading na true
   dispatch(setInitialLoading(true));
 
+  console.log("Ładowanie początkowych danych sensorów...");
+
   try {
     // Grupuj dane według sensorId
     const allData = [...co2, ...temperature, ...humidity, ...sunlight];

@@ -4,6 +4,7 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/common/SideBar";
 import { ReduxProvider } from "@/store/ReduxProvider";
+import { DataLoader } from "@/components/common/DataLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,8 +36,7 @@ export default function RootLayout({
             <AppSidebar />
             <main className="w-full ">
               <SidebarTrigger />
-
-              {children}
+              <DataLoader>{children}</DataLoader>
             </main>
           </SidebarProvider>
         </ReduxProvider>
