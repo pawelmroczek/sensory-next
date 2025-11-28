@@ -197,6 +197,8 @@ const TableComponent = ({ sensorType }: TableComponentProps) => {
             data={allMeasurementsSorted}
             searchKey="sensorId"
             searchPlaceholder="Szukaj po ID sensora..."
+            enableDateFilter={true}
+            dateKey="timestamp"
           />
         </TabsContent>
 
@@ -216,6 +218,8 @@ const TableComponent = ({ sensorType }: TableComponentProps) => {
                 data={sensorDataSorted}
                 searchKey="Id"
                 searchPlaceholder="Szukaj po ID pomiaru..."
+                enableDateFilter={true}
+                dateKey="timestamp"
               />
             </TabsContent>
           );
